@@ -9,17 +9,17 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/user/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -73,8 +73,8 @@ DISABLE_UPDATE_PROMPT="true"
 ZSH_AUTOSUGGEST_USE_ASYNC="true"
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions zsh-completions git tmux colored-man-pages common-aliases docker extract vagrant)
@@ -114,6 +114,7 @@ alias gpwd='cat /dev/urandom | env LC_CTYPE=C LC_ALL=C gtr -d -c "a-km-zA-HJ-NP-
 alias gpwds='cat /dev/urandom | gtr -d -c "a-km-zA-HJ-NP-Z2-9" | gfold -w 16 | head -1'
 alias nano='vim'
 alias ll='LC_COLLATE=C gls --color=auto --group-directories-first -a -l'
-
+alias kce='sed -i "" -e "s/extract\ vagrant)/extract\ vagrant\ kubectl)/g" $HOME/.zshrc && source $HOME/.zshrc'
+alias kcd='sed -i "" -e "s/extract\ vagrant\ kubectl)/extract\ vagrant)/g" $HOME/.zshrc && source $HOME/.zshrc'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
