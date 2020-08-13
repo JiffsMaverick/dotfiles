@@ -116,5 +116,6 @@ alias nano='vim'
 alias ll='LC_COLLATE=C gls --color=auto --group-directories-first -a -l'
 alias kce='sed -i "" -e "s/extract\ vagrant)/extract\ vagrant\ kubectl)/g" $HOME/.zshrc && source $HOME/.zshrc'
 alias kcd='sed -i "" -e "s/extract\ vagrant\ kubectl)/extract\ vagrant)/g" $HOME/.zshrc && source $HOME/.zshrc'
+alias icrt='certinfo(){ openssl x509 -text -noout -in $1 | grep "Subject:\|DNS:\|Not \|Issuer:";  unset -f certinfo; }; certinfo'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
